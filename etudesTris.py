@@ -1,5 +1,6 @@
 import random
-def tri_insertion(tableau):
+def tri_insertion(tab):
+    tableau=tab[:]
     comp=0
     perm=0
     for i in range(1,len(tableau)):
@@ -18,7 +19,8 @@ def tri_insertion(tableau):
     
     return tableau
 
-def tri_bulle(tableau):
+def tri_bulle(tab):
+    tableau=tab[:]
     comp=0
     perm=0
     permutation = True
@@ -38,9 +40,10 @@ def tri_bulle(tableau):
     return tableau
 
 
-def tri_selection(tableau):
+def tri_selection(tab):
     comp=0
     perm=0
+    tableau=tab[:]
     nb = len(tableau)
     for en_cours in range(0,nb-1):    
         plus_petit = en_cours
@@ -64,31 +67,29 @@ def affiche_complexite(tableau,comp,perm):
     print ("Opérations ", perm+comp)
 
 
+tab = [random.randint(0,20) for i in range(10)]
 
 print("Tri à bulles")
 print("Tableau avant:")
-tab = [1,4,98,123,300,400,800]
 print(tab)
-tri_bulle(tab)
+tab_tri=tri_bulle(tab)
 print("Tableau après le tri:")
-print(tab)
+print(tab_tri)
 print("#################################")
 
 print("Tri par sélection")
 print("Tableau avant:")
-tab = [1,4,98,123,300,400,800]
 print(tab)
-tri_selection(tab)
+tab_tri=tri_selection(tab)
 print("Tableau après le tri:")
-print(tab)
+print(tab_tri)
 print("#################################")
 
 print("Tri insertions")
 print("Tableau avant:")
-tab = [1,4,98,123,300,400,800]
 print(tab)
-tri_insertion(tab)
+tab_tri=tri_insertion(tab)
 print("Tableau après le tri:")
-print(tab)
+print(tab_tri)
 print("#################################")
 
